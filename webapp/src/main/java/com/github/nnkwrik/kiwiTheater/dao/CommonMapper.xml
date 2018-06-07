@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace必须和mapper.java同名 -->
+<mapper namespace="com.github.nnkwrik.kiwiTheater.dao.CommonMapper">
+
+    <resultMap id="simpleVo" type="Vo">
+        <association property="room" javaType="Room">
+            <!--except description-->
+            <id column="room_id" property="id"/>
+            <result column="roomname" property="roomname"/>
+            <result column="img" property="img"/>
+            <result column="category" property="category"/>
+            <!--<result column="living" property="living"/>-->
+        </association>
+        <association property="user" javaType="User">
+            <id column="user_id" property="id" />
+            <result column="nickname" property="nickname"/>
+            <result column="avatar" property="avatar"/>
+        </association>
+    </resultMap>
+    
+    <sql id="findVolist">
+        SELECT room.id room_id,
+        room.roomname,
+        room.img,
+        room.category,
+        `user`.id user_id,
+        `user`.nickname,
+        `user`.avatar
+
+        FROM room,`user`
+    </sql>
+
+    <select id="findSimpleVoListByRooomIds" parameterType="java.util.List" resultMap="simpleVo">
+        <include refid="findVolist"/>
+        WHERE room.id IN <foreach item="id" collection="list" open="(" close=")" separator=",">#{id}</foreach>
+        AND `user`.id = room.anchorid
+    </select>
+
+    <select id="findSimpleVoListByKeys" parameterType="java.util.List" resultMap="simpleVo">
+        <include refid="findVolist"/>
+        WHERE <foreach item="keys" collection="list" open="(" close=")" separator="OR">room.roomname LIKE '%${keys}%'</foreach>
+        AND `user`.id = room.anchorid
+    </select>
+
+    <select id="findSimpleVoListByCate" parameterType="java.lang.Integer" resultMap="simpleVo">
+        <include refid="findVolist"/>
+        WHERE room.category = #{cate}
+        AND `user`.id = room.anchorid
+    </select>
+    <update id="updateCoin" parameterType="User">
+        update user set coin=#{coin},usedcoin=#{usedcoin} where id=#{id}
+    </update>
+
+
+</mapper>

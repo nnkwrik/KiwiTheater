@@ -1,0 +1,11 @@
+##ignore this file##
+
+/*/target/ 
+
+/.idea/
+
+/*/*.iml
+
+/*.iml
+
+/webapp/src/main/webapp/WEB-INF/jsp/*.html

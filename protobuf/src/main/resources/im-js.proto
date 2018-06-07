@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+enum ImType {
+	ImHandShake = 1;
+	ImChClose = 2;
+	SysAnnouncement = 3;
+	Danmaku = 4;
+	Gift = 5;
+}
+
+message Im {
+	required ImType imType = 1;		//(require)通信的类型
+	optional uint32 senderid = 2;		//发送人
+	optional string sendername = 3;
+	optional uint32 roomid = 4;
+	optional string content = 5;	
+}
