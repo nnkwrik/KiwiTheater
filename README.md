@@ -1,13 +1,11 @@
 
-![logo](assets/logo.png)
+
+<p align="center"><img src="assets/logo.png" width="623"/>
+</p>
 
 
-
-## 介绍
 
 一个直播平台，Spring+SpringMVC+Mybatis，Netty，Protobuf，[SRS](https://github.com/ossrs/srs)
-
-
 
 
 
