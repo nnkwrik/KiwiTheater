@@ -5,9 +5,9 @@
 
 
 
+## 介绍
+
 一个直播平台，Spring+SpringMVC+Mybatis，Netty，Protobuf，[SRS](https://github.com/ossrs/srs)
-
-
 
 ## 架构
 
