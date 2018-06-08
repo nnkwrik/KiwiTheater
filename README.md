@@ -35,9 +35,9 @@ mysql : 3306
 
 ![kiwi theater 首页](assets/kiwi%20theater%20%E9%A6%96%E9%A1%B5.png)
 
-直播间：![localhost 8080 play roomid 9](assets/localhost 8080 play roomid 9.png)
+直播间：
 
-
+![localhost 8080 play roomid 9](assets/localhost%208080%20play%20roomid%209.png)
 
 ## 参考
 
