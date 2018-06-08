@@ -1,11 +1,15 @@
-# KiwiTheater
-
 
 ![logo](assets/logo.png)
 
 
 
-一个直播平台，Spring+SpringMVC+Mybatis，Netty，Protobuf
+## 介绍
+
+一个直播平台，Spring+SpringMVC+Mybatis，Netty，Protobuf，[SRS](https://github.com/ossrs/srs)
+
+
+
+
 
 ## 架构
 
@@ -24,6 +28,16 @@ IM : 2333
 redis : 6379
 
 mysql : 3306
+
+## 截图
+
+首页：
+
+![kiwi theater 首页](assets/kiwi%20theater%20%E9%A6%96%E9%A1%B5.png)
+
+直播间：![localhost 8080 play roomid 9](assets/localhost 8080 play roomid 9.png)
+
+
 
 ## 参考
 
