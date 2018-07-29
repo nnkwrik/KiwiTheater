@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace必须和mapper.java同名 -->
+<mapper namespace="ssm.dao.RoomMapper">
+
+
+    <select id="findRoomById" parameterType="java.lang.Integer" resultType="Room">
+        SELECT * FROM room WHERE id = #{roomid}
+    </select>
+
+
+    <update id="updateRoomInfo" parameterType="Room">
+        UPDATE room
+        SET roomname = #{roomname}, category = #{category}
+        <if test="img!=null and img!=''">, img = #{img}</if>
+        <if test="description!=null and description!=''">, description = #{description}</if>
+        WHERE id = #{id}
+    </update>
+
+
+    <insert id="createRoom" parameterType="Room">
+        <selectKey keyProperty="id" order="AFTER" resultType="int">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+
+        INSERT INTO room (roomname,anchorid,category
+        <if test="img!=null and img!=''">, img</if>
+        <if test="description!=null and description!=''">, description</if>
+        )
+        VALUES (#{roomname},#{anchorid},#{category}
+        <if test="img!=null and img!=''">, #{img}</if>
+        <if test="description!=null and description!=''">, #{description}</if>
+        )
+    </insert>
+
+
+</mapper>
+
