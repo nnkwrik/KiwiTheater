@@ -7,7 +7,7 @@
 
 ## 介绍
 
-一个直播平台，Spring+SpringMVC+Mybatis，Netty，Protobuf，[SRS](https://github.com/ossrs/srs), Docker
+一个直播平台，Spring+SpringMVC+Mybatis，Netty，Protobuf，[SRS](https://github.com/ossrs/srs), Docker , Rancher
 
 ## 架构
 
