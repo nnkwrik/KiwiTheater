@@ -37,6 +37,14 @@ mysql : 3306
 
 ![localhost 8080 play roomid 9](assets/localhost%208080%20play%20roomid%209.png)
 
+
+
+**TODO:**
+
+docker化后VideoJs不起作用
+
+
+
 ## 参考
 
 SRS HTTPCallBack https://github.com/ossrs/srs/wiki/v3_CN_HTTPCallback
